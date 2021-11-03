@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .heading-center
+    h1#site-title URL Shortener
+    h2 아래 URL을 사용해주세요!
+    div.br-height1
+      br
+    a(href= `http://${shortUrl}` target="_blank" rel="noopener noreferrer") #{shortUrl}
+    div.br-height2
+      br
+    hr.hr-style
+    p
+      | Short URL 요청 횟수: 
+      u #{createCount}
+      | 번
+      br
+      | Short URL 사용 횟수: 
+      u #{visitCount}
+      | 번
+      br
+      | Short URL 최초 생성 시간: 
+      u #{formatted_date} 
+    hr.hr-style
