@@ -1,4 +1,5 @@
 const Url = require('../../models/url');
+const createError = require('http-errors');
 
 const getOriginalService = (req,res,next) => {
   return new Promise(async (resolve, reject) => {
@@ -16,13 +17,10 @@ const getOriginalService = (req,res,next) => {
       }
       else{
         // invalid url
-        let e = new Error("invalid URL");
-        e.status = 404;
-        console.log(e);
+        let e = createError(404, "URL not found on server");
         reject(e);
       }
     } catch (e){
-      e.status = 500;
       reject(e);
     } finally {
       

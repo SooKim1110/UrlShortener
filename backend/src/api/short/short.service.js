@@ -1,6 +1,7 @@
 const Url = require('../../models/url');
 const { nanoid } = require('nanoid')
-var moment = require('moment');
+const moment = require('moment');
+const createError = require('http-errors');
 
 const postShortService = (req,res,next) => {
   return new Promise(async (resolve, reject) => {
@@ -29,8 +30,7 @@ const postShortService = (req,res,next) => {
         
         await url.save(function(e){
           if(e){
-            e.status = 500;
-            reject(new Error("URL save request has failed"));
+            reject(e);
             return;
           }
         })

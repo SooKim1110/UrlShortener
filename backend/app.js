@@ -20,6 +20,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.get('/check', (req,res) => {
+  res.status(200).send("server check success");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -29,12 +32,17 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.message = err.message;
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  console.log(err);
+  if (!err.status) err.status = 500;
+  if (!err.message) err.message = "Internal Server Error";
+  if (err){
+    res.status(err.status);
+    res.render('error', {error: err});
+  }
 });
 
 module.exports = app;
