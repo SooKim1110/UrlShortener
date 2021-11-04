@@ -5,7 +5,12 @@ const getOriginalCtrl = async (req,res,next) => {
   await getOriginalService(req,res,next)
   .then((result)=>{
     if (result){
-      res.redirect('https://'+result);
+      let hasProtocol = /^((http|https|ftp):\/\/)/;
+      if(!hasProtocol.test(result)) {
+      result = "http://" + result;
+      }
+      console.log(result);
+      res.redirect(result);
     }
   })
   .catch((e) => {

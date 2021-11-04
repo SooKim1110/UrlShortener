@@ -14,7 +14,7 @@ const postShortService = (req,res,next) => {
         url.createCount++;
         let createCount = url.createCount;
         await url.updateOne({createCount});
-        let formatted_date = moment(url.createDate).format('YYYY-MM-DD HH:mm:ss');
+        let formatted_date = moment(url.createDate).add(9,'hours').format('YYYY-MM-DD HH:mm:ss');
         resolve({url, formatted_date});
       }
       else{
@@ -34,7 +34,7 @@ const postShortService = (req,res,next) => {
             return;
           }
         })
-        let formatted_date = moment(url.createDate).format('YYYY-MM-DD HH:mm:ss');
+        let formatted_date = moment(url.createDate).add(9, 'hours').format('YYYY-MM-DD HH:mm:ss');
         resolve({url, formatted_date});
       }
     } catch (e){
