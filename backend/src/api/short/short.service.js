@@ -2,9 +2,6 @@ const Url = require('../../models/url');
 const { nanoid } = require('nanoid')
 const moment = require('moment');
 const createError = require('http-errors');
-const moment_tz = require('moment-timezone');
-
-const dateKorea = moment.tz(Date.now(), "Asia/Seoul");
 
 const postShortService = (req,res,next) => {
   return new Promise(async (resolve, reject) => {
@@ -28,7 +25,7 @@ const postShortService = (req,res,next) => {
           shortUrl,
           createCount: 1,
           visitCount: 0,
-          createDate: dateKorea
+          createDate: new Date()
         });
         
         await url.save(function(e){
