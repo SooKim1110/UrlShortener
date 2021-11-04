@@ -6,7 +6,7 @@ var original = require('./original');
 router.get('/', function(req, res, next) {
   res.render('index');
 });
-router.use('/', original);
 router.use('/short', short);
+router.use('/', original);
 
 module.exports = router;
