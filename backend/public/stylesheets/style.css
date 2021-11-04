@@ -6,9 +6,8 @@ body {
 }
 
 a {
-  color: #2d53d1;
-  font-size: 30px;
-  font-family: 'Bebas Neue', cursive;
+  color: inherit;
+  text-decoration: none;
 }
 
 .heading-center {
@@ -57,6 +56,12 @@ a {
 
 #submit-button:hover {
   background-color: #e7e7e7;
+}
+
+#url {
+  color: #2d53d1;
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
 }
 
 ::placeholder {

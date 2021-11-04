@@ -2,11 +2,12 @@ extends layout
 
 block content
   .heading-center
-    h1#site-title URL Shortener
+    h1#site-title
+     a(href="/") URL Shortener
     h2 아래 URL을 사용해주세요!
     div.br-height1
       br
-    a(href= `http://${shortUrl}` target="_blank" rel="noopener noreferrer") #{shortUrl}
+    a#url(href= `http://${shortUrl}` target="_blank" rel="noopener noreferrer") #{shortUrl}
     div.br-height2
       br
     hr.hr-style

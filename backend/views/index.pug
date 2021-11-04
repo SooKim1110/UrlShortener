@@ -2,7 +2,8 @@ extends layout
 
 block content
   .heading-center
-    h1#site-title URL Shortener
+    h1#site-title
+     a(href="/") URL Shortener
     h2 줄이실 URL을 아래 칸에 입력해주세요
     form(action="/short",method="post")
       input#input(type="text", name="originalUrl", placeholder="Enter URL here")
