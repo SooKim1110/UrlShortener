@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const moment_tz = require('moment-timezone');
+const dateKorea = moment_tz.tz(Date.now(), "Asia/Seoul");
 
 const UrlSchema = new mongoose.Schema({
   originalUrl: {
@@ -23,7 +25,7 @@ const UrlSchema = new mongoose.Schema({
   },
   createDate: {
     type: Date,
-    default: Date.now
+    default: dateKorea
   }
 });
 
