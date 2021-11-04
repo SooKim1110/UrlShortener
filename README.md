@@ -35,7 +35,7 @@
     ├── app.js             # express 객체 생성, 미들웨어 관리
     └── db.js              # MongoBD 연결
 
-# 작동 스크린샷
+### 작동 스크린샷
 
 <img width="800" alt="Screen Shot 2021-11-05 at 4 05 20 AM" src="https://user-images.githubusercontent.com/47516074/140404313-4e060ef8-7366-4565-aa77-46a904bef54a.png">
 1. 긴 URL 입력 화면 <br></br> 
