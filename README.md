@@ -20,9 +20,7 @@
 - short URL 경로로 접근하면 short URL을 디코딩하여서 id 값을 찾아내고, 이 id 값으로 DB를 조회하여 original URL을 빠르게 찾아냄 
 
 ## 데모 사이트
-<div align="center">
 [www.yourshorturl.tk](http://www.yourshorturl.tk "site link") 
-</div>
 <img width="1200" alt="Screen Shot 2021-11-05 at 4 00 00 AM" src="https://user-images.githubusercontent.com/47516074/140403197-4fcd3b1c-916f-449e-b3af-797efebede48.png">
 
 ## 운영 환경
