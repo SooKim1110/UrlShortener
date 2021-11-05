@@ -17,8 +17,9 @@ const postShortCtrl = async (req,res,next) => {
 
   await postShortService(req,res,next)
   .then((result)=>{
-    let { url, formatted_date } = result;
-    var { shortUrl, createCount, visitCount } = url;
+    let { url, shortUrl, formatted_date } = result;
+    console.log(url);
+    let { createCount, visitCount } = url;
     shortUrl = req.headers.host + "/"+ shortUrl;
     res.render('short', {shortUrl, createCount, visitCount, formatted_date});
   })

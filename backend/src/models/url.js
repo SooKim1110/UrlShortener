@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const UrlSchema = new mongoose.Schema({
-  originalUrl: {
-    type: String,
-    required: true,
-    unique: true
+  _id: {
+    type: Number
   },
-  shortUrl: {
+  originalUrl: {
     type: String,
     required: true,
     unique: true
@@ -25,6 +24,8 @@ const UrlSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
-});
+}, {_id: false});
+
+UrlSchema.plugin(AutoIncrement);
 
 module.exports = mongoose.model('Url', UrlSchema);
